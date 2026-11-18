@@ -664,12 +664,12 @@ html[data-theme=light] .stars{color:#e0a100}
 .board-h{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 2px 6px}
 .board-h b{font-size:.88rem;font-weight:600}
 .board-h em{font-style:normal;font-size:.76rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--tint-hi);color:var(--glow)}
-.lead{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:center;padding:16px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-.lead i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand-deep);color:#fff;font-style:normal;font-size:.66rem;font-weight:700}
-.lead u{display:block;height:7px;border-radius:4px;background:var(--line-strong);text-decoration:none}
-.lead u+u{width:60%;margin-top:7px;background:var(--line)}
-.lead.won{border-color:#6ee7cf80}
-.lead.won i{background:var(--signal);color:var(--signal-ink)}
+.board .lead{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:center;padding:16px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.board .lead i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand-deep);color:#fff;font-style:normal;font-size:.66rem;font-weight:700}
+.board .lead u{display:block;height:7px;border-radius:4px;background:var(--line-strong);text-decoration:none}
+.board .lead u+u{width:60%;margin-top:7px;background:var(--line)}
+.board .lead.won{border-color:#6ee7cf80}
+.board .lead.won i{background:var(--signal);color:var(--signal-ink)}
 .board-col:last-child .board-h em{background:#6ee7cf26;color:var(--signal-text)}
 @media (width<=900px){
   .crm-in{grid-template-columns:1fr}
@@ -677,8 +677,8 @@ html[data-theme=light] .stars{color:#e0a100}
 @media (width<=560px){
   .board{padding:10px;gap:8px;border-radius:18px}
   .board-col{padding:8px}
-  .lead{grid-template-columns:1fr;padding:10px}
-  .lead i{width:26px;height:26px}
+  .board .lead{grid-template-columns:1fr;padding:10px}
+  .board .lead i{width:26px;height:26px}
   .board-h b{font-size:.76rem}
 }
 
@@ -713,4 +713,18 @@ html[data-theme=light] .stars{color:#e0a100}
 html[data-theme=light] .fw{background:#fff;box-shadow:0 30px 70px -50px #6e4ea066}
 html[data-theme=light] .hc-r{background:#fff;box-shadow:0 30px 70px -50px #6e4ea066}
 html[data-theme=light] .board{background:#ffffffd9}
-html[data-theme=light] .lead.won{border-color:#0a8a7466}
+html[data-theme=light] .board .lead.won{border-color:#0a8a7466}
+
+/* Who we work with: five industries on one row on desktop */
+@media (width>1080px){.industries .grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:18px}.industries .card{padding:28px 24px}}
+@media (width>680px) and (width<=1080px){.industries .grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* Four example tabs in the chat demo: let them scroll sideways on small screens */
+@media (width<=560px){
+  .cd-bar{flex-wrap:wrap}
+  .cd-tabs{max-width:100%;overflow-x:auto;scrollbar-width:none}
+  .cd-tabs::-webkit-scrollbar{display:none}
+  .cd-tabs button{flex:none}
+}
+/* Keep the four example tabs and the language switch on one row */
+.cd-bar{gap:8px}
+.cd-tabs button,.cd-lang button,.on-dark .cd-tabs button,.on-dark .cd-lang button{padding:8px 11px;font-size:.84rem}
