@@ -728,3 +728,26 @@ html[data-theme=light] .board .lead.won{border-color:#0a8a7466}
 /* Keep the four example tabs and the language switch on one row */
 .cd-bar{gap:8px}
 .cd-tabs button,.cd-lang button,.on-dark .cd-tabs button,.on-dark .cd-lang button{padding:8px 11px;font-size:.84rem}
+
+/* ---------- FAQ blocks (AEO) ---------- */
+.faqs-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.faqs-in h2{font-size:clamp(1.9rem,3.4vw,3rem)}
+.faqs-g{font-size:clamp(1.5rem,2.4vw,2.1rem)}
+.faqs-all{display:inline-block;margin-top:24px}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font-size:1.08rem;font-weight:600;letter-spacing:-.015em;color:var(--text)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:after{content:"+";flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-strong);color:var(--glow);font-size:1.2rem;font-weight:400;transition:transform .2s}
+.qa details[open] summary:after{content:"–";background:var(--brand);border-color:var(--brand);color:#fff}
+.qa summary:hover{color:var(--glow)}
+.qa summary:focus-visible{outline:2px solid var(--glow);outline-offset:4px;border-radius:6px}
+.qa-a{padding:0 48px 24px 0;color:var(--ink-soft);line-height:1.7;max-width:64ch}
+html[dir=rtl] .qa-a{padding:0 0 24px 48px}
+@media (width<=860px){.faqs-in{grid-template-columns:1fr;gap:20px}.qa-a{padding-inline-end:0}}
+
+/* ---------- Contact page: three phone numbers ---------- */
+.tels{display:grid;gap:10px}
+.tel-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+.tel-row small{color:var(--muted);font-size:.86rem}
+.faqs-all{display:block;width:max-content}
